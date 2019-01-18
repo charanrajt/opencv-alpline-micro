@@ -41,7 +41,7 @@ RUN cd /tmp \
 && tar -xzf opencv-$OPENCV_VERSION.tar.gz \
 && cd /tmp/opencv-$OPENCV_VERSION \
 && mkdir build \
-&& mkdir /usr/local/opencv 
+&& mkdir /usr/local/opencv \
 && cd build \
 && CC=/usr/bin/clang CXX=/usr/bin/clang++ cmake \
 -D CMAKE_BUILD_TYPE=RELEASE \
