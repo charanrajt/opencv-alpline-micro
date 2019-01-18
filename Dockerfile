@@ -16,6 +16,7 @@ build-base \
 clang \
 clang-dev \
 cmake \
+libjasper \
 git \
 pkgconf \
 wget \
@@ -27,7 +28,6 @@ libpng \
 libpng-dev \
 tiff \
 tiff-dev \
-libjasper \
 jasper-dev \
 python \
 python-dev \
