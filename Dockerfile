@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.5
 LABEL maintainer "charanrajt@gmail.com"
 ENV OPENCV_VERSION 4.0.0
 
