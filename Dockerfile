@@ -7,7 +7,7 @@ ENV OPENCV_VERSION 2.4.13.2
 RUN echo "@edge-testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
 echo "@edge-community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
 
-#4 update apk, install dependencies
+#3 update apk, install dependencies
 RUN apk update \
 && apk upgrade \
 && apk add --no-cache \
@@ -34,7 +34,7 @@ py-numpy@edge-community \
 py-numpy-dev@edge-community \
 linux-headers
 
-#Build opencv
+#4 Build opencv
 RUN cd /tmp \
 && wget -O opencv-$OPENCV_VERSION.tar.gz https://github.com/opencv/opencv/archive/$OPENCV_VERSION.tar.gz \
 && tar -xzf opencv-$OPENCV_VERSION.tar.gz \
@@ -55,7 +55,7 @@ RUN cd /tmp \
 && make -j2 \
 && make install 
 
-#Clean
+#5 Clean
 RUN rm -rf /tmp/opencv-$OPENCV_VERSION* \
 && apk del \
 build-base \
