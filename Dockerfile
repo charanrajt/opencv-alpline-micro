@@ -1,7 +1,6 @@
 FROM alpine:3.5
 LABEL maintainer "charanrajt@gmail.com"
-ENV OPENCV_VERSION 4.0.0
-
+ENV OPENCV_VERSION 2.4.13.2
 
 #2 Add Edge and bleeding repos
 # add the edge repositories
@@ -54,9 +53,10 @@ RUN cd /tmp \
 -D BUILD_PERF_TESTS=OFF \
 -D BUILD_TESTS=OFF .. \
 && make -j2 \
-&& make install \
-&& cd / \
-&& rm -rf /tmp/opencv-$OPENCV_VERSION* \
+&& make install 
+
+#Clean
+RUN rm -rf /tmp/opencv-$OPENCV_VERSION* \
 && apk del \
 build-base \
 clang \
