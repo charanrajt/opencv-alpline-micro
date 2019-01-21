@@ -1,6 +1,6 @@
 FROM alpine:3.5
 LABEL maintainer "charanrajt@gmail.com"
-ENV OPENCV_VERSION 2.4.13.2
+ENV OPENCV_VERSION 3.45
 
 #2 Add Edge and bleeding repos
 # add the edge repositories
@@ -65,6 +65,5 @@ libtbb-dev \
 libjpeg-turbo-dev \
 libpng-dev \
 tiff-dev \
-jasper-dev \
-python-dev \
-py-numpy-dev
+jasper-dev 
+
