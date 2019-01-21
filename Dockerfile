@@ -1,6 +1,6 @@
 FROM alpine:3.5
 LABEL maintainer "charanrajt@gmail.com"
-ENV OPENCV_VERSION 3.45
+ENV OPENCV_VERSION 3.4.5
 
 
 #2 Add Edge and bleeding repos
