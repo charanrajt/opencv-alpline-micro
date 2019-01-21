@@ -28,10 +28,6 @@ libpng-dev \
 tiff \
 tiff-dev \
 jasper-dev \
-python \
-python-dev \
-py-numpy@edge-community \
-py-numpy-dev@edge-community \
 linux-headers
 
 #4 Build opencv
