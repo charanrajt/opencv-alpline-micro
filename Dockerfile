@@ -2,6 +2,7 @@ FROM alpine:3.5
 LABEL maintainer "charanrajt@gmail.com"
 ENV OPENCV_VERSION 3.45
 
+
 #2 Add Edge and bleeding repos
 # add the edge repositories
 RUN echo "@edge-testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
