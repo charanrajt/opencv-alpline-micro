@@ -16,7 +16,6 @@ build-base \
 clang \
 clang-dev \
 cmake \
-libjasper \
 git \
 pkgconf \
 wget \
@@ -28,6 +27,7 @@ libpng \
 libpng-dev \
 tiff \
 tiff-dev \
+libjasper \
 jasper-dev \
 linux-headers
 
@@ -53,7 +53,7 @@ RUN cd /tmp \
 && make install 
 
 #5 Clean
-RUN rm -rf /tmp/opencv-$OPENCV_VERSION* \
+RUN rm -rf /tmp/opencv-$OPENCV_VERSION* /var/cache/apk/* \
 && apk del \
 build-base \
 clang \
