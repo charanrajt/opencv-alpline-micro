@@ -1,6 +1,6 @@
-FROM alpine:3.5
+FROM alpine:3.8
 LABEL maintainer "charanrajt@gmail.com"
-ENV OPENCV_VERSION 3.4.5
+ENV OPENCV_VERSION 4.0
 
 
 
@@ -30,11 +30,11 @@ tiff \
 tiff-dev \
 libjasper \
 jasper-dev \
-python \
-python-dev \
-py-numpy@edge-community \
-py-numpy-dev@edge-community \
 linux-headers
+#python \
+#python-dev \
+#py-numpy@edge-community \
+#py-numpy-dev@edge-community \
 
 #4 Build opencv
 RUN cd /tmp \
@@ -53,18 +53,16 @@ RUN cd /tmp \
 -D WITH_TBB=YES \
 -D WITH_1394=NO \
 -D BUILD_PERF_TESTS=OFF \
+-DBUILD_SHARED_LIBS=OFF\
 -D BUILD_TESTS=OFF .. \
 && make -j2 \
-&& make install \
-&& cd /
+&& make install 
 
 #5 Clean
 RUN rm -rf /tmp/opencv-$OPENCV_VERSION*  \
 && apk del \
 build-base \
-clang \
 clang-dev \
-cmake \
 git \
 pkgconf \
 wget \
@@ -72,7 +70,10 @@ libtbb-dev \
 libjpeg-turbo-dev \
 libpng-dev \
 tiff-dev \
-jasper-dev \
-python-dev \
-py-numpy-dev
+jasper-dev 
+#python-dev \
+#py-numpy-dev\
+#cmake \
+#clang \
+
  
