@@ -28,9 +28,9 @@ libpng \
 libpng-dev \
 tiff \
 tiff-dev \
-libjasper \
-jasper-dev \
 linux-headers
+#ibjasper \
+#jasper-dev \
 #python \
 #python-dev \
 #py-numpy@edge-community \
@@ -53,7 +53,7 @@ RUN cd /tmp \
 -D WITH_TBB=YES \
 -D WITH_1394=NO \
 -D BUILD_PERF_TESTS=OFF \
--DBUILD_SHARED_LIBS=OFF\
+-D BUILD_SHARED_LIBS=OFF\
 -D BUILD_TESTS=OFF .. \
 && make -j2 \
 && make install 
